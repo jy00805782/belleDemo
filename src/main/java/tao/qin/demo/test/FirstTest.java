@@ -8,29 +8,11 @@ import cn.wonhigh.retail.tpas.client.TpasOrsClient;
 
 public class FirstTest {
 	public static void main(String[] args) throws Exception {
-		System.out.println(Integer.parseInt(null));
 		
-		String serviceUrl = "http://tpas-test.belle.net.cn/api/belle.tpas.oauth.getToken";
-		String appKey = "83331445";
-		String appSecret = "14583b986fe74b849bf88b809b6c6a78";
-		TokenClient tokenClient = new TokenClient(serviceUrl, appKey, appSecret);
-
-		String token = tokenClient.getToken();
-		System.out.println(token);
-		 
+		Short a = null;
+		Short b = 1;
 		
-
-//		String appKey = "83331445";
-//		String appSecret = "14583b986fe74b849bf88b809b6c6a78";
-		String url = "http://tpas-test.belle.net.cn/api/belle.pos.order.queryCanRefundFlag";
-		TpasOrsClient tpasOrsClient = new TpasOrsClient(url, appKey, appSecret);
-		OrderRefundReqDto dto = new OrderRefundReqDto();
-		dto.setOrderNo("CA01BS1908010006");
-		dto.setShopNo("CA01BS");
-		dto.setSkuNos("");
-		String resp = tpasOrsClient.postJson(dto, token);
-		
-		System.out.println(resp);
+		System.out.println(a==b);
 
 //		List<String> a = null;
 //		for (String s : a) {
@@ -54,9 +36,37 @@ public class FirstTest {
 		 */
 
 	}
+	
+	
 
 	private static void aaaa() throws Exception {
 		float a = 1 / 0;
 		// throw new Exception() ;
+	}
+	
+	private static void test01() throws Exception {
+		System.out.println(Integer.parseInt(null));
+		
+		String serviceUrl = "http://tpas-test.belle.net.cn/api/belle.tpas.oauth.getToken";
+		String appKey = "83331445";
+		String appSecret = "14583b986fe74b849bf88b809b6c6a78";
+		TokenClient tokenClient = new TokenClient(serviceUrl, appKey, appSecret);
+
+		String token = tokenClient.getToken();
+		System.out.println(token);
+		 
+		
+
+//		String appKey = "83331445";
+//		String appSecret = "14583b986fe74b849bf88b809b6c6a78";
+		String url = "http://tpas-test.belle.net.cn/api/belle.pos.order.queryCanRefundFlag";
+		TpasOrsClient tpasOrsClient = new TpasOrsClient(url, appKey, appSecret);
+		OrderRefundReqDto dto = new OrderRefundReqDto();
+		dto.setOrderNo("CA01BS1908010006");
+		dto.setShopNo("CA01BS");
+		dto.setSkuNos("");
+		String resp = tpasOrsClient.postJson(dto, token);
+		
+		System.out.println(resp);
 	}
 }
